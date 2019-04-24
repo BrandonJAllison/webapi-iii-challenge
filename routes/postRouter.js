@@ -1,16 +1,12 @@
 const express = require('express');
 
 const Post = require('../data/helpers/postDb');
-
+const User = require('../data/helpers/userDb')
 const router = express.Router();
 router.use(express.json());
 
 
-function capitalizeName(req, res, next) {
-    let { name } = req.body;
-    req.body.name = name.toUpperCase();
-    next();
-  }
+
 
 
 router.get('/', async (req, res) => {
@@ -35,6 +31,20 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ message: 'Error retrieving the post' });
   }
 });
+
+router.get('/users/:id', async (req, res) => {
+    const post = await User.getUserPosts(req.params.id);
+    try {
+        if (post){
+            res.status(200).json(post)
+        }else{
+            res.status(404).json({ message: 'Posts not found!' });
+        }
+    }
+    catch(error) {
+        res.status(500).json({message: 'Error retrieving the post'})
+    }
+})
 
 router.post('/', async (req, res) => {
   const post = await Post.insert(req.body);
