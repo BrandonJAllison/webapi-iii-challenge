@@ -58,7 +58,7 @@ logger.info("Mem: " + os.totalmem()/1e+9);
 let result = Object.keys(os.networkInterfaces())
   .map(add => [add, os.networkInterfaces()[add].filter(add => add.family === 'IPv4')[0]])
   
-  logger.info('Network Adderess:', result)
+  console.log('Network Adderess:', result)
 
 server.get('/', async (req, res, next) => {
   res.send('Server Is Up and Running');
