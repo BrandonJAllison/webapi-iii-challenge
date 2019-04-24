@@ -53,12 +53,12 @@ const logger = createLogger({
 
 logger.info("Architecture: " + os.arch());
 logger.info("Platform: " + os.platform());
-logger.info("Mem: " + os.totalmem()/1e+9);
+logger.info("Total Memory: " + os.totalmem()/1e+9);
 
 let result = Object.keys(os.networkInterfaces())
   .map(add => [add, os.networkInterfaces()[add].filter(add => add.family === 'IPv4')[0]])
   
-  console.log('Network Adderess:', result)
+  console.log('Network Adderess:', result[0])
 
 server.get('/', async (req, res, next) => {
   res.send('Server Is Up and Running');
