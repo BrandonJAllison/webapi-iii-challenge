@@ -7,7 +7,6 @@ const router = express.Router();
 router.use(express.json());
 
 function capitalizeName(req, res, next) {
-  
   req.body.name = (req.body.name.charAt(0).toUpperCase() + req.body.name.slice(1))
   next();
   }
@@ -58,22 +57,19 @@ router.put('/:id',capitalizeName, async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-  const id = req.params.id;
-  User.removeUserPosts(id)
-    .then(() => {
-      User.remove(id).then(results => {
+    const id = req.params.id;
+    try{User.remove(id).then(results => {
         if (results) {
           res.status(200).json({ message: 'User Deleted' });
         } else {
           res.status(404).json({ message: 'Failed to delete user' });
         }
-      });
-    })
-    .catch(err => {
+      });}
+    catch(error) {
       res.status(500).json({
         error: 'The user could not be removed',
       });
-    });
+    };
 });
 
 
