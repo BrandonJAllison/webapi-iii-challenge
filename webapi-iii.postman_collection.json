@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "421cde32-89d8-4d38-943c-286a80038cfa",
+		"name": "webapi-iii",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GET/Users",
+					"item": [
+						{
+							"name": "GET/users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{root_path}}{{path}}/user",
+									"host": [
+										"{{root_path}}{{path}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET USER by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{root_path}}{{path}}/user/2",
+									"host": [
+										"{{root_path}}{{path}}"
+									],
+									"path": [
+										"user",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"rob\"}"
+						},
+						"url": {
+							"raw": "{{root_path}}{{path}}/user",
+							"host": [
+								"{{root_path}}{{path}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Darrell\"}"
+						},
+						"url": {
+							"raw": "{{root_path}}{{path}}/user/14",
+							"host": [
+								"{{root_path}}{{path}}"
+							],
+							"path": [
+								"user",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{root_path}}{{path}}/user/14",
+							"host": [
+								"{{root_path}}{{path}}"
+							],
+							"path": [
+								"user",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "GET/Posts",
+					"item": [
+						{
+							"name": "GET SERVER CHECK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{root_path}}{{path}}",
+									"host": [
+										"{{root_path}}{{path}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET POSTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{root_path}}{{path}}/post",
+									"host": [
+										"{{root_path}}{{path}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET POSTS BY USER",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{root_path}}{{path}}/post/users/1",
+									"host": [
+										"{{root_path}}{{path}}"
+									],
+									"path": [
+										"post",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET POST by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{root_path}}{{path}}/post/4",
+									"host": [
+										"{{root_path}}{{path}}"
+									],
+									"path": [
+										"post",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "274d95fd-bcc7-4e7b-8be3-3a3835bf01e4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5204bb94-2b4d-4bec-9ad9-c76f49cde781",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "DELETE post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{root_path}}{{path}}/post/39",
+							"host": [
+								"{{root_path}}{{path}}"
+							],
+							"path": [
+								"post",
+								"39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"user_id\": 3, \"text\": \"Testing our my request\" }"
+						},
+						"url": {
+							"raw": "{{root_path}}{{path}}/post",
+							"host": [
+								"{{root_path}}{{path}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"user_id\": 3, \"text\": \"Let's change it up a bit\" }"
+						},
+						"url": {
+							"raw": "{{root_path}}{{path}}/post/39",
+							"host": [
+								"{{root_path}}{{path}}"
+							],
+							"path": [
+								"post",
+								"39"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "56637819-cfda-4d77-bd89-55522c169e5e",
+			"key": "root_path",
+			"value": "localhost:",
+			"type": "string"
+		},
+		{
+			"id": "7044f2fb-0c9d-4df1-8285-9dcc9b9f6e46",
+			"key": "path",
+			"value": "5000",
+			"type": "string"
+		}
+	]
+}
